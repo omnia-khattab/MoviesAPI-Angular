@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #140620;
+    color: #fff;
+}
+hr{
+    height: 1px;
+    background-color: #8844c4;
+}
+img{
+    cursor: pointer;
+}
+.vote{
+    width: 30px;
+    height: 40px;
+    top: 3px;
+    right: 7%;
+    background-color: rgba(247, 224, 16, 0.87);
+    color: #140620;
+}
+a{
+    color: #fff;
+}
+a:hover{
+    color: #8844c4;
+}

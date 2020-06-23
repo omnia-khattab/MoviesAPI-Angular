@@ -1,0 +1,13 @@
+
+nav,.dropdown-menu{
+    background-color: #210a33 !important;
+}
+nav a{
+    color:#fff !important;
+}
+nav .nav-link:hover,.navbar .navbar-toggler span:hover{
+    color:#8844c4 !important;
+}
+.navbar .navbar-nav .dropdown-menu a:hover {
+    background-color: #8844c4!important;
+}

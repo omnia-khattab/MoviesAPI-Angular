@@ -1,0 +1,44 @@
+<div id="form-wrapper">
+        <div *ngIf='error' class="alert alert-danger w-50 m-auto">
+            {{error}}
+        </div>
+    <form [formGroup]="registerForm" class="formGroup w-50 m-auto py-4 mb-5 signup" (ngSubmit)="getFormData(registerForm)">
+        <h3 class="text-center">Register</h3>
+        <label>First Name</label>
+        <div class="form-group">
+            <input formControlName="first_name" [class.is-valid]='registerForm.get("first_name").valid==true' [class.is-invalid]='registerForm.get("first_name").invalid==true &&registerForm.get("first_name").touched==true'   class="form-control" type="text" name="first-name" id="fname">
+            <span *ngIf='registerForm.get("first_name").invalid==true &&registerForm.get("first_name").touched==true'  class="is-invalid d-block m-3 p-2 text-danger"> First Name Not Valid</span>
+        </div>
+
+        <label>Last Name</label>
+        <div class="form-group">
+            <input formControlName="last_name" [class.is-valid]='registerForm.get("last_name").valid==true' [class.is-invalid]='registerForm.get("last_name").invalid==true &&registerForm.get("last_name").touched==true' class="form-control" type="text" name="last-name" id="lname">
+            <span *ngIf='registerForm.get("last_name").invalid==true &&registerForm.get("last_name").touched==true' class="is-invalid d-block m-3 p-2 text-danger"> last Name Not Valid</span>
+        </div>
+
+        <label>Email</label>
+        <div class="form-group">
+            <input formControlName="email" [class.is-valid]='registerForm.get("email").valid==true' [class.is-invalid]='registerForm.get("email").invalid==true &&registerForm.get("email").touched==true' class="form-control" type="email" name="email" id="email">
+            <span *ngIf='registerForm.get("email").invalid==true &&registerForm.get("email").touched==true' class="is-invalid d-block m-3 p-2 text-danger"> Email Not Valid</span>
+        </div>
+
+        <label>Password</label>
+        <div class="form-group">
+            <input formControlName="password" [class.is-valid]='registerForm.get("password").valid==true' [class.is-invalid]='registerForm.get("password").invalid==true &&registerForm.get("password").touched==true' class="form-control" type="password" name="upassword" id="password">
+            <span *ngIf='registerForm.get("password").invalid==true &&registerForm.get("password").touched==true' class="is-invalid d-block m-3 p-2 text-danger">
+                password Not Valid (Minimum eight characters, at least one lowercase letter, one uppercase letter,one number,and one special character)</span>
+        </div>
+
+        <label>Age</label>
+        <div class="form-group">
+            <input formControlName="age" [class.is-valid]='registerForm.get("age").valid==true' [class.is-invalid]='registerForm.get("age").invalid==true &&registerForm.get("age").touched==true' class="form-control" type="number" name="age" id="age">
+            <span *ngIf='registerForm.get("age").invalid==true &&registerForm.get("age").touched==true' class="is-invalid d-block m-3 p-2 text-danger"> Age Not Valid</span>
+        </div>
+
+        <div class="form-group m-auto">
+            <button [disabled]='registerForm.invalid==true' class="btn btn-warning w-25" type="submit">Submit</button>
+        </div>
+    
+    </form>
+</div>
+

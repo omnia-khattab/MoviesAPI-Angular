@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <div *ngIf='isLoading==true' class="row">
+        <div class="col-md-8">
+            <div>
+                <img class="w-100" [src]="imagePrefix+movieDetails.backdrop_path" alt="movie poster">
+                <h3 class="my-3">{{movieDetails.original_title}}</h3>
+                <p class="mt-4">{{movieDetails.overview}}</p>
+                <h3>Relaese Date : {{movieDetails.release_date}}</h3>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4 class="mb-5">TOP FIVE MOVIES</h4>
+            <div class="row">
+                <div *ngFor="let movieItem of TopFive" class="col-md-6">
+                    <a [routerLink]="['/moviedetails',movieItem.id]" class="text-decoration-none">
+                        <img [src]='imagePrefix+movieItem.poster_path' class="w-50"  alt="Movie Poster">
+                        <h5 class="p-3">{{movieItem.title}}</h5>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>

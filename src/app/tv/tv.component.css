@@ -1,0 +1,14 @@
+ul{
+    border: 1px solid #fff;
+}
+.menu li{
+padding: 1rem;
+background-color: #210A33;
+margin-bottom: 0.5rem;
+}
+.menu li:hover{
+    background-color: #140620;
+}
+.menu li a:hover{
+    text-decoration: none;
+}

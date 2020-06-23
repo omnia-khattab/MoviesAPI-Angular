@@ -1,0 +1,111 @@
+<div id='movies' class="d-flex justify-content-between">
+    <div class="menu mt-5">
+        <ul class="list-unstyled mt-5 ml-3">
+            <li><a routerLink='/movies' (click)="showDiv.showtrendingContent = !showDiv.showtrendingContent;showDiv.showpopularContent = false;showDiv.showlatestContent = false;showDiv.showupcomingContent = false;showDiv.showtopRatedContent = false" >Trending Movies</a></li>
+            <li><a  routerLink='/movies' (click)="showDiv.showlatestContent = !showDiv.showlatestContent;showDiv.showpopularContent = false;showDiv.showtrendingContent = false;showDiv.showupcomingContent = false;showDiv.showtopRatedContent = false">Latest Movies</a></li>
+            <li><a routerLink='/movies' (click)="showDiv.showpopularContent = !showDiv.showpopularContent;showDiv.showlatestContent = false;showDiv.showtrendingContent = false;showDiv.showupcomingContent = false;showDiv.showtopRatedContent = false">Popular Movies</a></li>
+            <li><a routerLink='/movies' (click)="showDiv.showtopRatedContent = !showDiv.showtopRatedContent;showDiv.showlatestContent = false;showDiv.showtrendingContent = false;showDiv.showupcomingContent = false;showDiv.showpopularContent = false">Top-Rated Movies </a></li>
+            <li><a routerLink='/movies' (click)="showDiv.showupcomingContent = !showDiv.showupcomingContent;showDiv.showlatestContent = false;showDiv.showtrendingContent = false;showDiv.showtopRatedContent = false;showDiv.showpopularContent = false">Upcoming Movies </a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 offset-1" *ngIf="showDiv.showtrendingContent">
+                <h3 class="text-center mb-5">Trending Movies</h3>
+                <div class="row">
+                    <div *ngFor='let movie of trendingMovies' class="col-md-2">
+                        <a [routerLink]="['/moviedetails',movie.id]" class="text-decoration-none">
+                            <div class="movies py-1">
+                                <img [src]='imagePrefix+movie.poster_path' class="w-100"  alt="Movie Poster">
+                                <h5 class="p-3">{{movie.title}}</h5>
+                                <div class="vote position-absolute text-center">
+                                    <h6 class="my-2">{{movie.vote_average}} </h6>
+                                </div>
+                            </div>
+                        </a>    
+                    </div>
+                </div>
+            </div>
+                    
+            
+
+            <div class="col-md-11 offset-1">
+                <div *ngIf="showDiv.showlatestContent">
+                    <h3 class="text-center mb-5">latest Movies</h3>
+                    <div class="row">
+                        <div class="col-md-2 col-10 float-right" >
+                            <a [routerLink]="['/moviedetails',latestMovies.id]" class="text-decoration-none">
+                                <div class="movies py-1">
+                                    <img [src]='imagePrefix+latestMovies.poster_path' class="w-100"  alt="Movie Poster">
+                                    <h5 class="p-3">{{latestMovies.title}}</h5>
+                                    <div class="vote position-absolute text-center">
+                                        <h6 class="my-2">{{latestMovies.vote_average}} </h6>
+                                    </div>
+                                </div>
+                            </a>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-11 offset-1">
+                <div *ngIf="showDiv.showpopularContent">
+                    <h3 class="text-center mb-5">Popular Movies</h3>
+                    <div class="row">
+                        <div *ngFor='let movie of popularMovies' class="col-md-2">
+                            <a [routerLink]="['/moviedetails',movie.id]" class="text-decoration-none">
+                                <div class="movies py-1">
+                                    <img [src]='imagePrefix+movie.poster_path' class="w-100"  alt="Movie Poster">
+                                    <h5 class="p-3">{{movie.title}}</h5>
+                                    <div class="vote position-absolute text-center">
+                                        <h6 class="my-2">{{movie.vote_average}} </h6>
+                                    </div>
+                                </div>
+                            </a>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-11 offset-1">
+                <div *ngIf="showDiv.showtopRatedContent">
+                    <h3 class="text-center mb-5">Top-Rated Movies</h3>
+                    <div class="row">
+                        <div *ngFor='let movie of topRatedMovies' class="col-md-2 col-10 float-right" >
+                            <a [routerLink]="['/moviedetails',movie.id]" class="text-decoration-none">
+                                <div class="movies py-1">
+                                    <img [src]='imagePrefix+movie.poster_path' class="w-100"  alt="Movie Poster">
+                                    <h5 class="p-3">{{movie.title}}</h5>
+                                    <div class="vote position-absolute text-center">
+                                        <h6 class="my-2">{{movie.vote_average}} </h6>
+                                    </div>
+                                </div>
+                            </a>    
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-md-11 offset-1">
+                <div *ngIf="showDiv.showupcomingContent">
+                    <h3 class="text-center mb-5">Upcoming Movies</h3>
+                    <div class="row">
+                        <div *ngFor='let movie of upcomingMovies' class="col-md-2 col-10 float-right" >
+                            <a [routerLink]="['/moviedetails',movie.id]" class="text-decoration-none">
+                                <div class="movies py-1">
+                                    <img [src]='imagePrefix+movie.poster_path' class="w-100"  alt="Movie Poster">
+                                    <h5 class="p-3">{{movie.title}}</h5>
+                                    <div class="vote position-absolute text-center">
+                                        <h6 class="my-2">{{movie.vote_average}} </h6>
+                                    </div>
+                                </div>
+                            </a>    
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

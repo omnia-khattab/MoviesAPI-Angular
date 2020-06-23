@@ -1,0 +1,27 @@
+    <h5 class="text-center text-danger w-50 m-auto pb-4">you have to login first</h5>
+    <div *ngIf='error' class="alert alert-danger mt-4 w-50 m-auto">
+        {{error}}
+    </div>
+    <form [formGroup]="LoginForm" class="formGroup w-50 m-auto py-4 login" (ngSubmit)="getFormData(LoginForm)">
+        <h3 class="text-center mb-4">Login</h3>
+        <label>Email</label>
+        <div class="form-group">
+            <input formControlName="email" [class.is-valid]='LoginForm.get("email").valid==true' [class.is-invalid]='LoginForm.get("email").invalid==true &&LoginForm.get("email").touched==true' class="form-control" type="email" name="email" id="email">
+            <span *ngIf='LoginForm.get("email").invalid==true &&LoginForm.get("email").touched==true' class="is-invalid d-block m-3 p-2 text-danger"> Email Not Valid</span>
+        </div>
+
+        <label>Password</label>
+        <div class="form-group">
+            <input formControlName="password" [class.is-valid]='LoginForm.get("password").valid==true' [class.is-invalid]='LoginForm.get("password").invalid==true &&LoginForm.get("password").touched==true' class="form-control" type="password" name="upassword" id="password">
+            <span *ngIf='LoginForm.get("password").invalid==true &&LoginForm.get("password").touched==true' class="is-invalid d-block m-3 p-2 text-danger">
+                password Not Valid (Minimum eight characters, at least one lowercase letter, one uppercase letter,one number,and one special character)</span>
+        </div>
+
+        <div class="form-group m-auto">
+            <button [disabled]='LoginForm.invalid==true' class="btn btn-warning w-25" type="submit">Submit</button>
+        </div>
+        <div class="m-3">don't have Account ?? <a routerLink='../register'>Register</a> </div>
+
+        
+    </form>
+
