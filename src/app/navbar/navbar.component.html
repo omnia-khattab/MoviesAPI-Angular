@@ -1,22 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" routerLink="home">Movies API</a>
+        <a class="navbar-brand mr-4" routerLink="home">Movies API</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item active mr-3">
                     <a class="nav-link" *ngIf='isLogin==true' routerLink="/home">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mr-4">
                     <a class="nav-link" *ngIf='isLogin==true' routerLink="/movies">Movies</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mr-4">
                     <a class="nav-link" *ngIf='isLogin==true' routerLink="/tv">TV</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown mr-4">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">login/Register</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" routerLink="/login">Login</a>
